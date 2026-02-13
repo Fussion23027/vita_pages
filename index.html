@@ -50,33 +50,37 @@
     </div>
   </main>
 
-
+  <!-- SUPABASE SCRIPT -->
   <script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+    console.log(" SCRIPT SUPABASE CARGADO");
 
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-    const supabaseUrl = 'https://pqcgecgvfastavdxlesc.supabase.co'
-    const supabaseKey = 'pqcgecgvfastavdxlesc'
+    // 🔴 REEMPLAZA ESTO
+    const supabaseUrl = 'https://pqcgecgvfastavdxlesc.supabase.co';
+    const supabaseKey = 'sb_publishable_FMaKOlreN3hkZfvMiun47g_cOzNrYuM';
 
-    const supabase = createClient(supabaseUrl, supabaseKey)
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
     async function registrarVisita() {
-      const sessionId = crypto.randomUUID()
+      console.log(" Intentando registrar visita...");
+
+      const sessionId = crypto.randomUUID();
 
       const { data, error } = await supabase
         .from('usuarios')
         .insert([
           { session_id: sessionId }
-        ])
+        ]);
 
       if (error) {
-        console.error("Error insertando:", error)
+        console.error(" Error insertando:", error);
       } else {
-        console.log("Usuario registrado:", data)
+        console.log(" Usuario registrado correctamente:", data);
       }
     }
 
-    registrarVisita()
+    registrarVisita();
   </script>
 
 </body>
