@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>AnimReddit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <!-- NAV -->
   <header class="nav">
     <div class="nav-left">
@@ -50,29 +50,35 @@
     </div>
   </main>
 
-  <script src="app.js"></script>
+
   <script type="module">
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-  const supabase = createClient(
-    'pqcgecgvfastavdxlesc',
-    'TU_ANON_PUBLIC_KEY'
-  );
 
-  async function registrarVisita() {
-    const sessionId = crypto.randomUUID();
+    const supabaseUrl = 'https://supabase.com/dashboard/project/pqcgecgvfastavdxlesc/settings/general'
+    const supabaseKey = 'pqcgecgvfastavdxlesc'
 
-    const { data, error } = await supabase
-      .from('usuarios')
-      .insert([
-        { session_id: sessionId }
-      ]);
+    const supabase = createClient(supabaseUrl, supabaseKey)
 
-    console.log("Insert resultado:", data, error);
-  }
+    async function registrarVisita() {
+      const sessionId = crypto.randomUUID()
 
-  registrarVisita();
+      const { data, error } = await supabase
+        .from('usuarios')
+        .insert([
+          { session_id: sessionId }
+        ])
+
+      if (error) {
+        console.error("Error insertando:", error)
+      } else {
+        console.log("Usuario registrado:", data)
+      }
+    }
+
+    registrarVisita()
   </script>
-  </script>
+
 </body>
 </html>
+
