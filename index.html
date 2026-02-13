@@ -51,5 +51,27 @@
   </main>
 
   <script src="app.js"></script>
+   <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+    const supabase = createClient(
+      'pqcgecgvfastavdxlesc',
+      'TU_ANON_PUBLIC_KEY'
+    );
+
+    async function registrarVisita() {
+      const sessionId = crypto.randomUUID();
+
+      const { data, error } = await supabase
+        .from('usuarios')
+        .insert([
+          { session_id: sessionId }
+        ]);
+
+      console.log("Registro:", data, error);
+    }
+
+    registrarVisita();
+  </script>
 </body>
 </html>
