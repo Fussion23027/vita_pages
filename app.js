@@ -8,7 +8,7 @@ const supabaseKey = 'sb_publishable_FMaKOlreN3hkZfvMiun47g_cOzNrYuM';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function registrarVisita() {
-  console.log(" Intentando registrar visita...");
+  console.log(" Attempting to register a visit...");
 
   const sessionId = crypto.randomUUID();
 
@@ -19,9 +19,9 @@ async function registrarVisita() {
     ]);
 
   if (error) {
-    console.error(" Error insertando:", error);
+    console.error("Error inserting:", error);
   } else {
-    console.log(" Usuario registrado correctamente:", data);
+    console.log("Successfully", data);
   }
 }
 
