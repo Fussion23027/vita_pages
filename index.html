@@ -66,9 +66,8 @@
     console.log(" SCRIPT LOADED SUCCESSFULLY");
 
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-    const supabaseUrl = '';
-    const supabaseKey = '';
-
+    const supabaseUrl = 'https://pqcgecgvfastavdxlesc.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxY2dlY2d2ZmFzdGF2ZHhsZXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwMTMyMTUsImV4cCI6MjA4NjU4OTIxNX0.uxM6B6GddIL3kFdhjaQvVs8hKzNh9ti6HbH9jlp3KBw';
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     async function registrarVisita() {
