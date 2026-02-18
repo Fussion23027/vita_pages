@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AnimReddit</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AnimReddit</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="nav-left">
-      <div class="logo-wrap">
-        <div class="logo">R</div>
-      </div>
-      <span class="brand">AnimReddit</span>
+<div id="privacy-overlay" class="privacy-overlay">
+  <div class="privacy-box">
+    <h2>Privacy Notice</h2>
+    <p>
+      This website may store basic usage data such as session identifiers
+      for functionality and analytics purposes.
+    </p>
+    <div class="privacy-actions">
+      <button id="acceptBtn" class="btn primary">Accept</button>
+      <button id="denyBtn" class="btn ghost">Deny</button>
     </div>
+  </div>
+</div>
 
-    <input class="search" placeholder="Search AnimReddit">
-
-    <div class="nav-right">
-      <span class="mode">Guest</span>
-      <button class="admin-btn">Admin</button>
+<header class="nav">
+  <div class="nav-left">
+    <div class="logo-wrap">
+      
+      <div class="logo">V</div>
     </div>
-  </header>
+    
+    <span class="brand">Vita</span>
+    
+  </div>
 
-  <!-- HERO -->
-  <main class="hero">
-    <div class="bg"></div>
-    <div class="noise"></div>
+  <input class="search" type="text">
 
-    <div class="hero-content">
-      <div class="hero-logo">R</div>
+  <div class="nav-right">
+    <span class="mode">Guest</span>
+    <button class="admin-btn">Admin</button>
+  </div>
+</header>
 
-      <h1 class="title">
-        Welcome to <span>AnimReddit</span>
-      </h1>
+<main class="hero">
+  <div class="bg"></div>
+  <div class="noise"></div>
 
-      <p class="subtitle">
-        Animated Reddit-style hub.<br>
-        No reloads. No layout jumps.
-      </p>
-
-      <div class="buttons">
-        <button class="btn ghost">Enter as Guest</button>
-        <button class="btn primary">Administrator</button>
-      </div>
+  <section class="hero-content">
+    <div class="hero-logo">V</div>
+    <h1 class="title">Welcome</h1>
+    <div class="buttons">
+      <button class="btn ghost">Enter</button>
+      <button class="btn primary">Admin</button>
     </div>
-  </main>
+  </section>
+</main>
 
-  <!-- MODEL SCRIPT -->
+<script src="app.js"></script>
+
+</body>
+</html>
+
   <script type="module">
     console.log(" SCRIPT LOADED SUCCESSFULLY");
 
     import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-    const supabaseUrl = 'https://pqcgecgvfastavdxlesc.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxY2dlY2d2ZmFzdGF2ZHhsZXNjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEwMTMyMTUsImV4cCI6MjA4NjU4OTIxNX0.uxM6B6GddIL3kFdhjaQvVs8hKzNh9ti6HbH9jlp3KBw';
+    const supabaseUrl = '';
+    const supabaseKey = '';
 
     const supabase = createClient(supabaseUrl, supabaseKey);
 
