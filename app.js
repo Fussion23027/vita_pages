@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   denyBtn.addEventListener("click", () => {
-    document.body.innerHTML = "";
-  });
+  window.location.href = "https://www.google.com";
+});
 
 });
 
