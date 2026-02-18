@@ -1,26 +1,77 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const overlay = document.getElementById("privacy-overlay");
-  const acceptBtn = document.getElementById("acceptBtn");
-  const denyBtn = document.getElementById("denyBtn");
 
-  if (localStorage.getItem("privacyAccepted") === "true") {
-    overlay.remove();
-    iniciarSistema();
-    return;
+  const ADMIN_SECRET = btoa("VIAT-ACCESS-2026");
+
+  const adminBtn       = document.getElementById("adminAccess");
+  const guestBtn       = document.getElementById("guestAccess");
+  const adminModal     = document.getElementById("admin-modal");
+  const verifyBtn      = document.getElementById("verifyAdmin");
+  const adminCodeInput = document.getElementById("adminCode");
+  const adminError     = document.getElementById("adminError");
+
+
+  const openAdminModal = () => {
+    adminModal.classList.remove("hidden");
+    adminCodeInput.focus();
+  };
+
+  const closeAdminModal = () => {
+    adminModal.classList.add("hidden");
+    clearError();
+  };
+
+  const clearError = () => {
+    adminError.textContent = "";
+  };
+
+  const validateAdmin = () => {
+    const entered = btoa(adminCodeInput.value.trim());
+
+    if (entered === ADMIN_SECRET) {
+      sessionStorage.setItem("role", "admin");
+      window.location.href = "admin.html";
+    } else {
+      adminError.textContent = "Invalid access code";
+      adminCodeInput.value = "";
+      adminCodeInput.focus();
+    }
+  };
+
+
+  if (adminBtn) {
+    adminBtn.addEventListener("click", openAdminModal);
   }
 
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("privacyAccepted", "true");
-    overlay.remove();
-    iniciarSistema();
-  });
+  if (guestBtn) {
+    guestBtn.addEventListener("click", () => {
+      sessionStorage.setItem("role", "guest");
+      window.location.href = "posts.html";
+    });
+  }
 
-  denyBtn.addEventListener("click", () => {
-  window.location.href = "https://www.google.com";
+  if (verifyBtn) {
+    verifyBtn.addEventListener("click", validateAdmin);
+  }
+
+  if (adminCodeInput) {
+    adminCodeInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        validateAdmin();
+      }
+    });
+  }
+
+  if (adminModal) {
+    adminModal.addEventListener("click", (e) => {
+      if (e.target === adminModal) {
+        closeAdminModal();
+      }
+    });
+  }
+
 });
 
-});
 
 async function iniciarSistema() {
 
