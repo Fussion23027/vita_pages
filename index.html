@@ -3,40 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VITA</title>
+<title>AnimReddit</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="navbar">
-
-  <div class="nav-left">
-    <div class="logo">
-      ✔
+<div id="privacy-overlay">
+  <div class="privacy-modal">
+    <h2>Privacy Notice</h2>
+    <p>
+      We collect only the information necessary to provide our services.
+      Your personal data will be handled confidentially and will not be shared
+      with third parties without your consent, except when required by law.
+      By using this website, you agree to the processing of your data in
+      accordance with this notice.
+    </p>
+    <div class="privacy-buttons">
+      <button id="acceptBtn" class="accept">Accept</button>
+      <button id="denyBtn" class="deny">Deny</button>
     </div>
   </div>
+</div>
 
-  <div class="nav-center">
-    <input type="text" placeholder="Search..." class="search-bar">
+<header class="nav">
+  <div class="nav-left">
+    <div class="logo-wrap">
+      <div class="logo">✔</div>
+    </div>
+    <span class="brand">AnimReddit</span>
   </div>
+
+  <input class="search" placeholder="Search...">
 
   <div class="nav-right">
     <span class="alpha">✔ ALPHA IN PROGRESS</span>
   </div>
-
 </header>
 
 <main class="hero">
+  <div class="bg"></div>
+  <div class="noise"></div>
 
-  <h1>Welcome</h1>
+  <div class="hero-content">
+    <div class="hero-logo">✔</div>
+    <h1 class="title">Welcome to <span>AnimReddit</span></h1>
+    <p class="subtitle">Animated modern interface experience</p>
 
-  <div class="access-buttons">
-    <button class="admin-btn">Administrator</button>
-    <button class="guest-btn">Guest</button>
+    <div class="buttons">
+      <button class="btn primary">Administrador</button>
+      <button class="btn ghost">Invitado</button>
+    </div>
   </div>
-
 </main>
+
+<script src="app.js"></script>
 
 </body>
 </html>
