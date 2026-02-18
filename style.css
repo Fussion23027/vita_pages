@@ -16,6 +16,93 @@ body {
   overflow-x: hidden;
 }
 
+
+/* === PRIVACY OVERLAY === */
+#privacy-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(12px);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+animation:fadeIn 0.4s ease;
+}
+
+/* === MODAL === */
+.privacy-modal{
+background:#ffffff;
+color:#111;
+padding:40px 35px;
+width:90%;
+max-width:460px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 25px 60px rgba(0,0,0,0.3);
+animation:scaleIn 0.35s ease;
+}
+
+.privacy-modal h2{
+margin-bottom:15px;
+font-size:22px;
+font-weight:600;
+}
+
+.privacy-modal p{
+font-size:14px;
+color:#555;
+line-height:1.6;
+}
+
+/* === BUTTONS === */
+.privacy-buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+justify-content:center;
+}
+
+.privacy-buttons button{
+padding:12px 22px;
+border-radius:8px;
+border:none;
+cursor:pointer;
+font-weight:500;
+transition:0.25s ease;
+}
+
+.accept{
+background:#111;
+color:#fff;
+}
+
+.accept:hover{
+background:#000;
+transform:translateY(-2px);
+}
+
+.deny{
+background:#e5e5e5;
+color:#111;
+}
+
+.deny:hover{
+background:#d4d4d4;
+transform:translateY(-2px);
+}
+
+/* === Animations === */
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes scaleIn{
+from{transform:scale(0.9); opacity:0}
+to{transform:scale(1); opacity:1}
+}
+
 /* ================= NAV ================= */
 
 .nav {
