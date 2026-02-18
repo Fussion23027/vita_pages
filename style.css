@@ -1,5 +1,5 @@
 :root {
-  --orange: #ff4500;
+  --orange: #405fe7;
   --border: #e5e7eb;
   --gray: #6b7280;
 }
@@ -61,7 +61,7 @@ body {
 
 @keyframes logoIdle {
   0%,100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
+  70% { transform: scale(1.04); }
 }
 
 .brand {
@@ -166,7 +166,7 @@ body {
 }
 
 .title span {
-  background: linear-gradient(90deg, #ff4500, #ff7a45);
+  background: linear-gradient(90deg, #556ceb, #4577ff);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
