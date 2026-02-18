@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIAT Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+if(sessionStorage.getItem("role") !== "admin"){
+  window.location.href = "index.html";
+}
+</script>
+
+<header class="nav">
+  <div class="nav-left">
+    <div class="logo">✔</div>
+    <span class="brand">VIAT ADMIN</span>
+  </div>
+</header>
+
+<main class="panel">
+  <h1>Administrator Dashboard</h1>
+  <p>You have full access to manage content.</p>
+</main>
+
+</body>
+</html>
