@@ -16,13 +16,12 @@ body {
   overflow-x: hidden;
 }
 
-
 /* === PRIVACY OVERLAY === */
 #privacy-overlay{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,0.55);
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(14px);
 display:flex;
 align-items:center;
 justify-content:center;
@@ -32,28 +31,100 @@ animation:fadeIn 0.4s ease;
 
 /* === MODAL === */
 .privacy-modal{
-background:#ffffff;
-color:#111;
-padding:40px 35px;
+background:linear-gradient(135deg,#ffffff,#f3f6ff);
+color:#1a1a1a;
+padding:45px 40px;
 width:90%;
-max-width:460px;
-border-radius:16px;
+max-width:480px;
+border-radius:20px;
 text-align:center;
-box-shadow:0 25px 60px rgba(0,0,0,0.3);
+box-shadow:0 30px 70px rgba(0,0,0,0.25);
 animation:scaleIn 0.35s ease;
+font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Icon circle */
+.privacy-modal::before{
+content:"🔒";
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto 20px auto;
+width:70px;
+height:70px;
+background:linear-gradient(135deg,#4f8cff,#6a5cff);
+border-radius:50%;
+font-size:30px;
+color:white;
+box-shadow:0 10px 25px rgba(79,140,255,0.4);
 }
 
 .privacy-modal h2{
 margin-bottom:15px;
-font-size:22px;
+font-size:24px;
 font-weight:600;
 }
 
 .privacy-modal p{
-font-size:14px;
+font-size:15px;
 color:#555;
 line-height:1.6;
 }
+
+/* === BUTTONS === */
+.privacy-buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.privacy-buttons button{
+padding:13px 25px;
+border-radius:10px;
+border:none;
+cursor:pointer;
+font-size:14px;
+font-weight:600;
+transition:0.25s ease;
+min-width:120px;
+}
+
+/* Main button */
+.accept{
+background:linear-gradient(135deg,#4f8cff,#6a5cff);
+color:#fff;
+box-shadow:0 8px 20px rgba(79,140,255,0.4);
+}
+
+.accept:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 25px rgba(79,140,255,0.5);
+}
+
+/* Secondary button */
+.deny{
+background:#eef1f7;
+color:#333;
+}
+
+.deny:hover{
+background:#e0e6f3;
+transform:translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes scaleIn{
+from{transform:scale(0.9); opacity:0}
+to{transform:scale(1); opacity:1}
+}
+
 
 /* === BUTTONS === */
 .privacy-buttons{
