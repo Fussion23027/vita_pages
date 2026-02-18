@@ -3,35 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VITA</title>
+<title>VIAT</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="privacy-overlay">
-  <div class="privacy-modal">
-    <h2>Privacy Notice</h2>
-    <p>
-      We collect only the information necessary to provide our services.
-      Your personal data will be handled confidentially and will not be shared
-      with third parties without your consent, except when required by law.
-      By using this website, you agree to the processing of your data in
-      accordance with this notice.
-    </p>
-    <div class="privacy-buttons">
-      <button id="acceptBtn" class="accept">Accept</button>
-      <button id="denyBtn" class="deny">Deny</button>
-    </div>
-  </div>
-</div>
-
 <header class="nav">
   <div class="nav-left">
-    <div class="logo-wrap">
-      <div class="logo">✔</div>
-    </div>
-    <span class="brand">VITA</span>
+    <div class="logo">✔</div>
+    <span class="brand">VIAT</span>
   </div>
 
   <input class="search" placeholder="Search...">
@@ -43,24 +24,31 @@
 
 <main class="hero">
   <div class="bg"></div>
-  <div class="noise"></div>
-
   <div class="hero-content">
     <div class="hero-logo">✔</div>
-    <h1 class="title">Welcome to <span>VITA</span></h1>
-    <p class="subtitle">VITA modern interface experience</p>
+    <h1 class="title">Welcome to <span>VIAT</span></h1>
 
     <div class="buttons">
-      <button class="btn primary">Administrator</button>
-      <button class="btn ghost">Guest</button>
+      <button id="adminAccess" class="btn primary">Administrator</button>
+      <button id="guestAccess" class="btn ghost">Guest</button>
     </div>
   </div>
 </main>
+
+<div id="admin-modal" class="admin-modal hidden">
+  <div class="admin-box">
+    <h2>Administrator Access</h2>
+    <input type="password" id="adminCode" placeholder="Enter access code">
+    <button id="verifyAdmin" class="btn primary">Enter</button>
+    <p id="adminError" class="error-msg"></p>
+  </div>
+</div>
 
 <script src="app.js"></script>
 
 </body>
 </html>
+
 
 
 
